@@ -50,7 +50,7 @@ const pAequorFactory = (number, dna=mockUpStrand()) => {
 let instances = () => {
 	let array = [];
 	for (i = 0; i < 30; i++) {
-		array.push(mockUpStrand());
+		array.push(pAequorFactory(i));
 	}
 	return array;
 };
@@ -59,8 +59,6 @@ let instances = () => {
 let dna2 = ['T', 'G', 'C', 'T', 'G', 'C', 'T', 'C', 'A', 'G', 'A', 'T', 'G', 'A', 'C'];
 let bacteria = pAequorFactory(1, dna1);
 let bacteria2 = pAequorFactory(2, dna2);
-
-
 bacteria.compareDna(bacteria2);
 console.log(bacteria.willLikelySurvive());
 console.log(instances()); */
